@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/child-module.iml" filepath="$PROJECT_DIR$/.idea/modules/child-module.iml" group="child-module" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/child-module-2.iml" filepath="$PROJECT_DIR$/.idea/modules/child-module-2.iml" group="child-module-2" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/child-module-2/child-module-2_main.iml" filepath="$PROJECT_DIR$/.idea/modules/child-module-2/child-module-2_main.iml" group="child-module-2" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/child-module-2/child-module-2_test.iml" filepath="$PROJECT_DIR$/.idea/modules/child-module-2/child-module-2_test.iml" group="child-module-2" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/child-module/child-module_main.iml" filepath="$PROJECT_DIR$/.idea/modules/child-module/child-module_main.iml" group="child-module" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/child-module/child-module_test.iml" filepath="$PROJECT_DIR$/.idea/modules/child-module/child-module_test.iml" group="child-module" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ricardo.teste.gradle.iml" filepath="$PROJECT_DIR$/.idea/modules/ricardo.teste.gradle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ricardo.teste.gradle_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ricardo.teste.gradle_main.iml" group="ricardo.teste.gradle" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ricardo.teste.gradle_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ricardo.teste.gradle_test.iml" group="ricardo.teste.gradle" />
+    </modules>
+  </component>
+</project>

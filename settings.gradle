@@ -1,4 +1,5 @@
 rootProject.name = 'ricardo.teste.gradle'
 include 'child-module'
 include 'child-module-2'
+include 'child-module-3'
 

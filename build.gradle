@@ -81,7 +81,25 @@ class TimingsListener implements TaskExecutionListener, BuildListener {
 
 gradle.addListener new TimingsListener()
 
+class CustomPluginData {
+    String msg = 'Hello'
+}
 
+class CustomPlugin implements Plugin<Project> {
+    void apply(Project project) {
+       def extension = project.extensions.create('customPlugin', CustomPluginData)
+
+        project.task('customPluginTask') {
+            doLast {
+                println extension.msg
+            }
+        }
+    }
+}
+
+apply plugin: CustomPlugin
+
+customPlugin.msg = "This message is shown when CustomPlugin runs"
 
 task execute(type: Exec, dependsOn: jar) {
     executable 'java'

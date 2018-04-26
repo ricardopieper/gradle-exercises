@@ -1,7 +1,12 @@
+plugins {
+    id "org.ricardo.example.plugin" version "1.0"
+}
+
 group 'ricardo.teste.gradle'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'groovy'
+apply plugin: 'org.ricardo.example.plugin'
 
 repositories {
     mavenCentral()
@@ -30,7 +35,7 @@ myTask { println 'Should appear after Configure Project' }
 jar {
     from configurations.runtime.asFileTree.files.collect { zipTree(it) }
 
-    manifest{
+    manifest {
         attributes(
                 "Main-Class": "ricardo.gradle.test.main.Application",
         )
@@ -38,6 +43,7 @@ jar {
 }
 
 import java.util.concurrent.TimeUnit
+
 // Log timings per task.
 class TimingsListener implements TaskExecutionListener, BuildListener {
     private long startTime
@@ -81,26 +87,6 @@ class TimingsListener implements TaskExecutionListener, BuildListener {
 
 gradle.addListener new TimingsListener()
 
-class CustomPluginData {
-    String msg = 'Hello'
-}
-
-class CustomPlugin implements Plugin<Project> {
-    void apply(Project project) {
-       def extension = project.extensions.create('customPlugin', CustomPluginData)
-
-        project.task('customPluginTask') {
-            doLast {
-                println extension.msg
-            }
-        }
-    }
-}
-
-apply plugin: CustomPlugin
-
-customPlugin.msg = "This message is shown when CustomPlugin runs"
-
 task execute(type: Exec, dependsOn: jar) {
     executable 'java'
     args "-jar", jar.archivePath.absolutePath
@@ -110,3 +96,9 @@ task measure(type: Exec, dependsOn: jar) {
     executable 'java'
     args "-jar", jar.archivePath.absolutePath
 }
+
+exampleTask {
+    data = "i made this"
+}
+
+build.dependsOn exampleTask
